@@ -1,0 +1,17 @@
+<div id="panel">
+  
+    <input (input)="processBookmarkTitle($event)" type="text" placeholder="Bookmark title">
+    <input (input)="processBookmarkDescription($event)" type="text" placeholder="Description">
+  
+    <div>{{processableBookmark}}</div>
+  
+    <input (input)="processBookmarkCategory($event)" type="text" placeholder="Bookmark category">
+  
+    <div id="footer-placeholder">
+      <button (click)="processNextBookmark()">Next bookmark</button>
+      <button 
+        [disabled]="!isProcessable()"
+        (click)="saveBookmark()"
+        >Save bookmark</button>
+    </div>
+  </div>
