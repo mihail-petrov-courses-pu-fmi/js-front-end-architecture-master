@@ -1,17 +1,13 @@
+<traffic-light
+  (onTrafficLightChange)="processTrafficLight($event)">
+</traffic-light>
+
 <bookmark-create 
   (onLinkSaved)="processLinkSaved($event)">
 </bookmark-create>
+
 <hr>
 
-<div *ngIf="processedBookmarkCollection.length > 0">
-  <div *ngFor="let element of processedBookmarkCollection">
-    <div>{{element.title}}</div>
-    <div>{{element.category}}</div>
-    <div>{{element.description}}</div>
-    <div>{{element.url}}</div>
-  </div>
-</div>
-
-<div *ngIf="processedBookmarkCollection.length == 0">
-  Няма обработени линкове
-</div>
+<bookmark-list 
+  [inputBookmark]="processedBookmarkCollection">
+</bookmark-list>
