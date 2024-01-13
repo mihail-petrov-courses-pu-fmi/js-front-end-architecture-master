@@ -21,11 +21,14 @@ export class AppComponent {
 
   public processedBookmarkCollection: any[] = [];
 
+  public trafficLightState: any;
+
   public processLinkSaved($event: any) {
     this.processedBookmarkCollection = $event;
   }
 
   public processTrafficLight($event: any) {
-    console.log($event);
+    this.trafficLightState = $event;
+    console.log(this.trafficLightState);
   }
 }

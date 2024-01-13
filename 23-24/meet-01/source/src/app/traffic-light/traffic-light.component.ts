@@ -1,26 +1,35 @@
+import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 
 @Component({
     selector    : 'traffic-light',
     templateUrl : './traffic-light.component.html',
     styleUrl    : './traffic-light.component.scss',
-    standalone  : true
+    standalone  : true,
+    imports     : [
+        CommonModule
+    ]
 })
 export class TrafficLightComponent implements OnInit {
 
     @Output()
     public onTrafficLightChange = new EventEmitter();
 
-    private trafficLight: any = 'red';
+    public trafficLight: any = 'red';
     
     public ngOnInit(): void {
         
+        this.onTrafficLightChange.emit({
+            trafficSignal: this.trafficLight 
+        });
+
         setInterval(() => {
+
+            this.trafficLight = this.getNextLight();
+            
             this.onTrafficLightChange.emit({
                 trafficSignal: this.trafficLight 
             });
-
-            this.trafficLight = this.getNextLight();
 
         }, 1000);
     }
