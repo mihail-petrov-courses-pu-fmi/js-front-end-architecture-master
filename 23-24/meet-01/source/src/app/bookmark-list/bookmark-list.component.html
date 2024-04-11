@@ -1,0 +1,28 @@
+@if (inputBookmark.length > 0) {
+
+    @for (element of inputBookmark; track $index) {
+        <div>{{element.title}}</div>
+        <div>{{element.category}}</div>
+        <div>{{element.description}}</div>
+        <div>{{element.url}}</div>
+    }
+}
+
+@if(inputBookmark.length == 0) {
+    <div>Няма обработени линкове</div>
+}
+
+<!-- 
+<div *ngIf="inputBookmark.length > 0">
+    <div *ngFor="let element of inputBookmark">
+        <div>{{element.title}}</div>
+        <div>{{element.category}}</div>
+        <div>{{element.description}}</div>
+        <div>{{element.url}}</div>
+    </div>
+</div> 
+
+<div *ngIf="inputBookmark.length == 0">
+    Няма обработени линкове
+</div>
+-->

@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+}
+
+.circle {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    border: solid #dfdfdf 1px
+}
+
+.red    { background: #ff0000;}
+.yellow { background: #ffff00;}
+.green  { background: #00ff00;}
+.idle   { background: #dedede ;}

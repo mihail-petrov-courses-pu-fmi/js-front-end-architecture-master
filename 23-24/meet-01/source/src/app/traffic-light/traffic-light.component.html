@@ -1,0 +1,12 @@
+<div class="wrapper">
+    <div [ngClass]="trafficLight == 'red'    ? 'red'    : 'idle'"  class="circle red"></div>
+    <div [ngClass]="trafficLight == 'yellow' ? 'yellow' : 'idle'" class="circle yellow"></div>
+    <div [ngClass]="trafficLight == 'green'  ? 'green'  : 'idle'" class="circle green"></div>
+</div>
+
+
+<!-- * - маха или слага нов елемент върху който е приложена -->
+<!-- *ngIf - премахни елемента или го добави
+*ngFor - добави N на брой елементи
+
+[ng] - промени елемента без да го премахваш или добавяш -->
